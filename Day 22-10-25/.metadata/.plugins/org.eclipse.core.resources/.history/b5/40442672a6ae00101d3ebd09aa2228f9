@@ -1,0 +1,11 @@
+package com.demo.services;
+
+public class MissingNumberServicesImpl implements MissingNumberServices{
+
+	@Override
+	public int missingNumber(int n) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

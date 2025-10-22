@@ -1,0 +1,66 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+import com.demo.services.PatternServices;
+import com.demo.services.PatternServicesImpl;
+
+public class Patterns {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		PatternServices pservices = new PatternServicesImpl();
+		Operations op = null;
+		String ans = null;
+		do {
+			try {
+				System.out.print("Enter Number(rows) : ");
+				int n = sc.nextInt();
+				sc.nextLine();
+				System.out.println("---Select Operation---");
+				for (Operations o : Operations.values()) {
+					System.out.println(o.ordinal() + "." + o);
+				}
+				System.out.print("Enter Choice : ");
+				String input = sc.nextLine();
+				int choice = 0;
+				try {
+					choice = Integer.parseInt(input);
+				} catch (NumberFormatException e) {
+					System.out.println(e.getMessage());
+				}
+				if (choice < 0 || choice >= Operations.values().length) {
+					System.out.println("Invalid choice!");
+					continue;
+				}
+
+				op = Operations.values()[choice];
+				switch (op) {
+				case Triangle -> {
+					pservices.patternTriangle(n);
+				}
+				case Pyramid -> {
+					pservices.patternPyramid(n);
+				}
+				case Exit -> {
+					System.out.println("Exited");
+				}
+				default -> {
+					System.out.println("Invalid Choice!!!");
+				}
+				}
+
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+			System.out.println("Pattern is done");
+			System.out.print("Do you want to check for another number? (y/n): ");
+			ans = sc.next();
+		} while (ans.equalsIgnoreCase("y"));
+
+		sc.close();
+		System.out.println("Pattern is successfully terminated....");
+
+	}
+
+}

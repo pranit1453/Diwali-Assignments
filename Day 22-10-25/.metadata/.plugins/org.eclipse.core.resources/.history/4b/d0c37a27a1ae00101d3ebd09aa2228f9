@@ -1,0 +1,17 @@
+package com.demo.services;
+
+public class PatternServicesImpl implements PatternServices {
+
+	@Override
+	public void patternTriangle(int n) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void patternPyramid(int n) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

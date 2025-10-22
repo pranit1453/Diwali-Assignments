@@ -1,0 +1,36 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+import com.demo.services.AdditionServices;
+import com.demo.services.AdditionServicesImpl;
+
+public class AdditionOfNumbers {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		AdditionServices aservices = new AdditionServicesImpl();
+
+		String ans = null;
+		do {
+			try {
+				System.out.print("Enter First Number: ");
+				int n1 = sc.nextInt();
+				System.out.print("Enter Second Number: ");
+				int n2 = sc.nextInt();
+				int res = aservices.additionOfTwoNumber(n1, n2);
+
+				System.out.println("Result of two numbers " + n1 + " ," + n2 + " is : " + res);
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+			System.out.println("Addition of two numbers is done");
+			System.out.print("Do you want to check for another number? (y/n): ");
+			ans = sc.next();
+		} while (ans.equalsIgnoreCase("y"));
+		
+		sc.close();
+		System.out.println("Addition of two number is successfully terminated....");
+	}
+
+}

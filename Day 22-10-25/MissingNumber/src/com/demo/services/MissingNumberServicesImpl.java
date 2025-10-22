@@ -1,0 +1,16 @@
+package com.demo.services;
+
+public class MissingNumberServicesImpl implements MissingNumberServices {
+
+	@Override
+	public int missingNumber(int[] arr, int n) {
+		int sum = 0;
+		for (int i = 0; i < n; i++) {
+			sum += arr[i];
+		}
+		int expectedSum = (n * (n + 1)) / 2;
+		int missing = expectedSum - sum;
+		return missing;
+	}
+
+}

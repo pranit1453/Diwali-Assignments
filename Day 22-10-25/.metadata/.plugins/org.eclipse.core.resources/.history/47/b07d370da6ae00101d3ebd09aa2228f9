@@ -1,0 +1,37 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+import com.demo.services.MissingNumberServices;
+import com.demo.services.MissingNumberServicesImpl;
+
+public class MissingNumberArray {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		MissingNumberServices mservices = new MissingNumberServicesImpl();
+
+		String ans = null;
+		do {
+			try {
+				System.out.print("Enter Size: ");
+				int n = sc.nextInt();
+				int [] arr = new int[n];
+				
+				int res = mservices.missingNumber(n);
+
+				System.out.println("Result of two numbers " + n1 + " , " + n2 + " is : " + res);
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+			System.out.println("Addition of two numbers is done");
+			System.out.print("Do you want to check for another number? (y/n): ");
+			ans = sc.next();
+		} while (ans.equalsIgnoreCase("y"));
+
+		sc.close();
+		System.out.println("Addition of two number is successfully terminated....");
+
+	}
+
+}

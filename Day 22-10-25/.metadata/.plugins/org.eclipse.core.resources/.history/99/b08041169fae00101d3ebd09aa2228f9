@@ -1,0 +1,35 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+import com.demo.services.PatternServices;
+import com.demo.services.PatternServicesImpl;
+
+public class Patterns {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		PatternServices pservices = new PatternServicesImpl();
+
+		String ans = null;
+		do {
+			try {
+				System.out.print("Enter Number: ");
+				int n = sc.nextInt();
+				
+				pservices.pattern(n);
+
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+			System.out.println("Pattern is done");
+			System.out.print("Do you want to check for another number? (y/n): ");
+			ans = sc.next();
+		} while (ans.equalsIgnoreCase("y"));
+
+		sc.close();
+		System.out.println("Pattern is successfully terminated....");
+
+	}
+
+}

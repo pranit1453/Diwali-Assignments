@@ -1,0 +1,11 @@
+package com.demo.services;
+
+public class AdditionServicesImpl implements AdditionServices{
+
+	@Override
+	public double additionOfTwoNumber(int n1, int n2) {
+		in
+		return 0;
+	}
+
+}

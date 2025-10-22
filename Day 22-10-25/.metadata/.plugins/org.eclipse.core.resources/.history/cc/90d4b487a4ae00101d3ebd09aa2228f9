@@ -1,0 +1,17 @@
+package com.demo.services;
+
+public class GCDLCMServicesImpl implements GCDLCMServices {
+
+	@Override
+	public double calculateGCD(double n1, double n2) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double calculateLCM(double n1, double n2) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

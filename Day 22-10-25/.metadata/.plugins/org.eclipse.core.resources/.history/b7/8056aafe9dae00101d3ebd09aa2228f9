@@ -1,0 +1,11 @@
+package com.demo.services;
+
+public class SumServicesImpl implements SumServices{
+
+	@Override
+	public double sumOfnDigit(double n) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}
